@@ -54,10 +54,13 @@ let sketch = function(p5) {
     p5.pop();
   };
 
-  p5.windowResized = function() {
-    s = p5.min(p5.windowWidth, p5.windowHeight);
-    p5.resizeCanvas(s, s);
-  }
+	p5.windowResized = function() {
+		if (navigator.userAgent.indexOf("HeadlessChrome") == -1) {
+			s = p5.min(p5.windowWidth, p5.windowHeight);
+			p5.resizeCanvas(s, s);
+			p5.initiate();
+		}
+	}
 }
 
 let myp5 = new p5(sketch, window.document.body);
