@@ -16,7 +16,12 @@ let sketch = function(p5) {
 		p5.colorMode(p5.HSB, 360);
 		screenSize = p5.min(p5.windowWidth, p5.windowHeight);
 		p5.createCanvas(screenSize, screenSize);
+		p5.initiate();
 		};
+		
+	p5.initiate() {
+		// Use this space for updating variables related to screenSize changing
+	}
 
 	p5.draw = function() {
 		p5.background(128);
